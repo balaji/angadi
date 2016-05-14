@@ -19,11 +19,5 @@ test:
   template: template0
 
 production:
-  adapter:  postgresql
-  host:     localhost
   encoding: unicode
-  database: angadi_online_production
-  pool:     5
-  username: bala
-  password: 
-  template: template0
+  pool: 15
