@@ -69,7 +69,8 @@ pickle-email-*.html
 
 # RubyMine project files
 .idea
-
+*.sqlite3
+spec/test_results.txt
 # Textmate project files
 /*.tmproj
 
