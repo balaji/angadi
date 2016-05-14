@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 ruby '2.3.0'
 gem 'rails', '4.2.5'
 gem 'sass-rails', '~> 5.0'
@@ -11,7 +10,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'pg'
 gem 'puma'
-
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
@@ -22,15 +20,12 @@ group :development do
   gem 'guard-rspec'
   gem 'hub', :require=>nil
   gem 'quiet_assets'
-  gem 'rails_apps_pages'
-  gem 'rails_apps_testing'
   gem 'rails_layout'
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
   gem 'spring-commands-rspec'
 end
-
 group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails'
@@ -40,15 +35,12 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
 end
-
 group :production do
   gem 'rails_12factor'
 end
-
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
 end
-
