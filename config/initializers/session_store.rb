@@ -2,6 +2,6 @@
 
 # rubocop:disable Metrics/LineLength
 
-Rails.application.config.session_store :cookie_store, key: '_sephora_online_session'
+Rails.application.config.session_store :cookie_store, key: '_angadi_online_session'
 
 # rubocop:enable Metrics/LineLength

@@ -16,7 +16,7 @@ development:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: sephora_online_development
+  database: angadi_online_development
   pool:     5
   username: bala
   password: 
@@ -44,7 +44,7 @@ test:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: sephora_online_test
+  database: angadi_online_test
   pool:     5
   username: bala
   password: 
@@ -54,7 +54,7 @@ production:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: sephora_online_production
+  database: angadi_online_production
   pool:     5
   username: bala
   password: 
