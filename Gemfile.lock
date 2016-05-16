@@ -36,6 +36,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    activeuuid (0.6.1)
+      activerecord (>= 3.1)
+      uuidtools
     addressable (2.4.0)
     arel (6.0.3)
     ast (2.2.0)
@@ -264,6 +267,7 @@ GEM
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.0.5)
+    uuidtools (2.1.5)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -277,6 +281,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activeuuid
   better_errors
   bootstrap-sass
   byebug
