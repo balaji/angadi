@@ -2,28 +2,8 @@
 <div class="container">
 
     <div class="row">
-
-        <div class="col-md-3">
-            <div class="list-group">
-                <% categories.each do |category| %>
-                    <% sub_categories = Category.where(parent_id: category.id) %>
-                    <% next if sub_categories.empty? %>
-                    <li class="list-group-item">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= category.name %></a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <% sub_categories.each do |sub_category| %>
-                                <li><%= link_to(sub_category.name, category_url(sub_category.id)) %></li>
-                            <% end %>
-                        </ul>
-                    </li>
-                <% end %>
-            </div>
-        </div>
-
-        <div class="col-md-9">
-
+        <div class="col-md-12">
             <div class="row carousel-holder">
-
                 <div class="col-md-12">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -53,131 +33,22 @@
 
             </div>
 
-            <div class="row">
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">$24.99</h4>
-                            <h4><a href="#">First Product</a>
-                            </h4>
-                            <p>See more snippets like this online store item at
-                                <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp
-                                    - http://bootsnipp.com</a>.
-                            </p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">15 reviews</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                            </p>
-                        </div>
+            <% categories.each do |category| %>
+                <% products = category.all_children.collect(&:products).flatten.sample(3)
+                    next if products.empty?
+                %>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4>Browse <strong><%= category.name %></strong></h4>
                     </div>
                 </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">$64.99</h4>
-                            <h4><a href="#">Second Product</a>
-                            </h4>
-                            <p>This is a short description. Lorem ipsum dolor
-                                sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">12 reviews</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </p>
-                        </div>
-                    </div>
+                <div class="row">
+                    <% products.each do |product| %>
+                        <%= render partial: 'home/product', locals: { product: product } %>
+                    <% end %>
                 </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">$74.99</h4>
-                            <h4><a href="#">Third Product</a>
-                            </h4>
-                            <p>This is a short description. Lorem ipsum dolor
-                                sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">31 reviews</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">$84.99</h4>
-                            <h4><a href="#">Fourth Product</a>
-                            </h4>
-                            <p>This is a short description. Lorem ipsum dolor
-                                sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">6 reviews</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">$94.99</h4>
-                            <h4><a href="#">Fifth Product</a>
-                            </h4>
-                            <p>This is a short description. Lorem ipsum dolor
-                                sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">18 reviews</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
+            <% end %>
         </div>
-
     </div>
-
 </div>
-<!-- /.container -->
 

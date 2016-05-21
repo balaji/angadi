@@ -11,18 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516152934) do
+ActiveRecord::Schema.define(version: 20160520162605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
   create_table "brands", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
-    t.string   "name",                        null: false
-    t.uuid     "category_id",                 null: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.boolean  "deleted",     default: false
+    t.string   "name",                       null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "deleted",    default: false
   end
 
   add_index "brands", ["name"], name: "index_brands_on_name", unique: true, using: :btree
@@ -50,7 +49,6 @@ ActiveRecord::Schema.define(version: 20160516152934) do
 
   add_index "products", ["name"], name: "index_products_on_name", unique: true, using: :btree
 
-  add_foreign_key "brands", "categories"
   add_foreign_key "categories", "categories", column: "parent_id"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
