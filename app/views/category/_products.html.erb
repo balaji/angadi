@@ -3,8 +3,17 @@
         <div class="list-group">
             <% categories.each do |category| %>
                 <h4><%= category.name %></h4>
-                <span>Browse by Brand</span>
                 <% cache do %>
+                    <!--Sub Categories-->
+                    <% unless category.children.empty? %>
+                        <div class="side-bar-title">Sub Categories</div>
+                        <% category.children.each do |sub_category| %>
+                            <%= link_to sub_category.name, category_url(sub_category.id), class: 'list-group-item' %>
+                        <% end %>
+                    <% end %>
+
+                    <!--Brands-->
+                    <div class="side-bar-title">Browse by Brand</div>
                     <% category.all_brands.each do |brand| %>
                         <% if defined?(brands) %>
                             <% if brands.include?(brand) %>
@@ -14,6 +23,7 @@
                             <%= link_to brand.name, "/product/search?term=#{brand.name}", class: 'list-group-item' %>
                         <% end %>
                     <% end %>
+
                 <% end %>
             <% end %>
         </div>

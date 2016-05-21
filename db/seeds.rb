@@ -1,94 +1,94 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
-Category.create([{name: 'Music & Video Games'},
-                 {name: 'Books'},
-                 {name: 'Mobiles'},
-                 {name: 'Computers & Accessories'},
-                 {name: 'Cameras, Audio & Video'},
-                 {name: 'Home, Kitchen & Pets'},
-                 {name: 'Toys & Baby Products'},
-                 {name: 'Sports, Fitness & Outdoors'},
-                 {name: 'Clothing & Accessories'},
-                 {name: 'English'},
-                 {name: 'Competitive Books'},
-                 {name: 'Fiction'},
-                 {name: 'Children & Young Adult'},
-                 {name: 'Digital SLRs'},
-                 {name: 'Musical Instruments'},
-                 {name: 'Camcorders'},
-                 {name: 'Speakers'},
-                 {name: 'MP3 & Media Players'},
-                 {name: 'PC Games'},
-                 {name: 'Consoles'},
-                 {name: 'Blu-ray'},
-                 {name: 'International Music'},
-                 {name: 'Rock'},
-                 {name: 'Classic Rock'},
-                 {name: 'Hard Rock'},
-                 {name: 'Jazz'},
-                 {name: 'Smartphones'},
-                 {name: 'Windows Mobiles'},
-                 {name: 'Android Mobiles'},
-                 {name: 'Cases & Covers'},
-                 {name: 'Women\'s Clothing'},
-                 {name: 'Men\'s Clothing'},
-                 {name: 'Kid\'s Clothing'},
-                 {name: 'Dogs'},
-                 {name: 'Home Improvement'},
-                 {name: 'Furniture'},
-                 {name: 'Kitchen & Home Appliances'},
-                 {name: 'Cricket'},
-                 {name: 'Badminton'},
-                 {name: 'Football'},
-                 {name: 'Tennis'},
-                 {name: 'Laptops'},
-                 {name: 'Pen Drives'},
-                 {name: 'Desktop Monitors'},
-                 {name: 'Networking & Internet Devices'}])
+Category.create([{ name: 'Music & Video Games' },
+                 { name: 'Books' },
+                 { name: 'Mobiles' },
+                 { name: 'Computers & Accessories' },
+                 { name: 'Cameras, Audio & Video' },
+                 { name: 'Home, Kitchen & Pets' },
+                 { name: 'Toys & Baby Products' },
+                 { name: 'Sports, Fitness & Outdoors' },
+                 { name: 'Clothing & Accessories' },
+                 { name: 'English' },
+                 { name: 'Competitive Books' },
+                 { name: 'Fiction' },
+                 { name: 'Children & Young Adult' },
+                 { name: 'Digital SLRs' },
+                 { name: 'Musical Instruments' },
+                 { name: 'Camcorders' },
+                 { name: 'Speakers' },
+                 { name: 'MP3 & Media Players' },
+                 { name: 'PC Games' },
+                 { name: 'Consoles' },
+                 { name: 'Blu-ray' },
+                 { name: 'International Music' },
+                 { name: 'Rock' },
+                 { name: 'Classic Rock' },
+                 { name: 'Hard Rock' },
+                 { name: 'Jazz' },
+                 { name: 'Smartphones' },
+                 { name: 'Windows Mobiles' },
+                 { name: 'Android Mobiles' },
+                 { name: 'Cases & Covers' },
+                 { name: 'Women\'s Clothing' },
+                 { name: 'Men\'s Clothing' },
+                 { name: 'Kid\'s Clothing' },
+                 { name: 'Dogs' },
+                 { name: 'Home Improvement' },
+                 { name: 'Furniture' },
+                 { name: 'Kitchen & Home Appliances' },
+                 { name: 'Cricket' },
+                 { name: 'Badminton' },
+                 { name: 'Football' },
+                 { name: 'Tennis' },
+                 { name: 'Laptops' },
+                 { name: 'Pen Drives' },
+                 { name: 'Desktop Monitors' },
+                 { name: 'Networking & Internet Devices' }])
 
-Category.update(Category.where(name: 'Tennis').ids, [{parent_id: Category.find_by_name('Sports, Fitness & Outdoors').id}])
-Category.update(Category.where(name: 'Football').ids, [{parent_id: Category.find_by_name('Sports, Fitness & Outdoors').id}])
-Category.update(Category.where(name: 'Badminton').ids, [{parent_id: Category.find_by_name('Sports, Fitness & Outdoors').id}])
-Category.update(Category.where(name: 'Cricket').ids, [{parent_id: Category.find_by_name('Sports, Fitness & Outdoors').id}])
+Category.update(Category.where(name: 'Tennis').ids, [{ parent_id: Category.find_by_name('Sports, Fitness & Outdoors').id }])
+Category.update(Category.where(name: 'Football').ids, [{ parent_id: Category.find_by_name('Sports, Fitness & Outdoors').id }])
+Category.update(Category.where(name: 'Badminton').ids, [{ parent_id: Category.find_by_name('Sports, Fitness & Outdoors').id }])
+Category.update(Category.where(name: 'Cricket').ids, [{ parent_id: Category.find_by_name('Sports, Fitness & Outdoors').id }])
 
-Category.update(Category.where(name: 'Dogs').ids, [{parent_id: Category.find_by_name('Home, Kitchen & Pets').id}])
-Category.update(Category.where(name: 'Home Improvement').ids, [{parent_id: Category.find_by_name('Home, Kitchen & Pets').id}])
-Category.update(Category.where(name: 'Kitchen & Home Appliances').ids, [{parent_id: Category.find_by_name('Home, Kitchen & Pets').id}])
-Category.update(Category.where(name: 'Furniture').ids, [{parent_id: Category.find_by_name('Home, Kitchen & Pets').id}])
+Category.update(Category.where(name: 'Dogs').ids, [{ parent_id: Category.find_by_name('Home, Kitchen & Pets').id }])
+Category.update(Category.where(name: 'Home Improvement').ids, [{ parent_id: Category.find_by_name('Home, Kitchen & Pets').id }])
+Category.update(Category.where(name: 'Kitchen & Home Appliances').ids, [{ parent_id: Category.find_by_name('Home, Kitchen & Pets').id }])
+Category.update(Category.where(name: 'Furniture').ids, [{ parent_id: Category.find_by_name('Home, Kitchen & Pets').id }])
 
-Category.update(Category.where(name: 'Men\'s Clothing').ids, [{parent_id: Category.find_by_name('Clothing & Accessories').id}])
-Category.update(Category.where(name: 'Women\'s Clothing').ids, [{parent_id: Category.find_by_name('Clothing & Accessories').id}])
-Category.update(Category.where(name: 'Kid\'s Clothing').ids, [{parent_id: Category.find_by_name('Clothing & Accessories').id}])
+Category.update(Category.where(name: 'Men\'s Clothing').ids, [{ parent_id: Category.find_by_name('Clothing & Accessories').id }])
+Category.update(Category.where(name: 'Women\'s Clothing').ids, [{ parent_id: Category.find_by_name('Clothing & Accessories').id }])
+Category.update(Category.where(name: 'Kid\'s Clothing').ids, [{ parent_id: Category.find_by_name('Clothing & Accessories').id }])
 
-Category.update(Category.where(name: 'Smartphones').ids, [{parent_id: Category.find_by_name('Mobiles').id}])
-Category.update(Category.where(name: 'Windows Mobiles').ids, [{parent_id: Category.find_by_name('Mobiles').id}])
-Category.update(Category.where(name: 'Android Mobiles').ids, [{parent_id: Category.find_by_name('Mobiles').id}])
-Category.update(Category.where(name: 'Cases & Covers').ids, [{parent_id: Category.find_by_name('Mobiles').id}])
+Category.update(Category.where(name: 'Smartphones').ids, [{ parent_id: Category.find_by_name('Mobiles').id }])
+Category.update(Category.where(name: 'Windows Mobiles').ids, [{ parent_id: Category.find_by_name('Mobiles').id }])
+Category.update(Category.where(name: 'Android Mobiles').ids, [{ parent_id: Category.find_by_name('Mobiles').id }])
+Category.update(Category.where(name: 'Cases & Covers').ids, [{ parent_id: Category.find_by_name('Mobiles').id }])
 
-Category.update(Category.where(name: 'PC Games').ids, [{parent_id: Category.find_by_name('Music & Video Games').id}])
-Category.update(Category.where(name: 'Consoles').ids, [{parent_id: Category.find_by_name('Music & Video Games').id}])
-Category.update(Category.where(name: 'Blu-ray').ids, [{parent_id: Category.find_by_name('Music & Video Games').id}])
-Category.update(Category.where(name: 'International Music').ids, [{parent_id: Category.find_by_name('Music & Video Games').id}])
-Category.update(Category.where(name: 'Rock').ids, [{parent_id: Category.find_by_name('International Music').id}])
-Category.update(Category.where(name: 'Classic Rock').ids, [{parent_id: Category.find_by_name('Rock').id}])
-Category.update(Category.where(name: 'Hard Rock').ids, [{parent_id: Category.find_by_name('Rock').id}])
-Category.update(Category.where(name: 'Jazz').ids, [{parent_id: Category.find_by_name('International Music').id}])
+Category.update(Category.where(name: 'PC Games').ids, [{ parent_id: Category.find_by_name('Music & Video Games').id }])
+Category.update(Category.where(name: 'Consoles').ids, [{ parent_id: Category.find_by_name('Music & Video Games').id }])
+Category.update(Category.where(name: 'Blu-ray').ids, [{ parent_id: Category.find_by_name('Music & Video Games').id }])
+Category.update(Category.where(name: 'International Music').ids, [{ parent_id: Category.find_by_name('Music & Video Games').id }])
+Category.update(Category.where(name: 'Rock').ids, [{ parent_id: Category.find_by_name('International Music').id }])
+Category.update(Category.where(name: 'Classic Rock').ids, [{ parent_id: Category.find_by_name('Rock').id }])
+Category.update(Category.where(name: 'Hard Rock').ids, [{ parent_id: Category.find_by_name('Rock').id }])
+Category.update(Category.where(name: 'Jazz').ids, [{ parent_id: Category.find_by_name('International Music').id }])
 
-Category.update(Category.where(name: 'Digital SLRs').ids, [{parent_id: Category.find_by_name('Cameras, Audio & Video').id}])
-Category.update(Category.where(name: 'Camcorders').ids, [{parent_id: Category.find_by_name('Cameras, Audio & Video').id}])
-Category.update(Category.where(name: 'Speakers').ids, [{parent_id: Category.find_by_name('Cameras, Audio & Video').id}])
-Category.update(Category.where(name: 'MP3 & Media Players').ids, [{parent_id: Category.find_by_name('Cameras, Audio & Video').id}])
+Category.update(Category.where(name: 'Digital SLRs').ids, [{ parent_id: Category.find_by_name('Cameras, Audio & Video').id }])
+Category.update(Category.where(name: 'Camcorders').ids, [{ parent_id: Category.find_by_name('Cameras, Audio & Video').id }])
+Category.update(Category.where(name: 'Speakers').ids, [{ parent_id: Category.find_by_name('Cameras, Audio & Video').id }])
+Category.update(Category.where(name: 'MP3 & Media Players').ids, [{ parent_id: Category.find_by_name('Cameras, Audio & Video').id }])
 
-Category.update(Category.where(name: 'English').ids, [{parent_id: Category.find_by_name('Books').id}])
-Category.update(Category.where(name: 'Competitive Books').ids, [{parent_id: Category.find_by_name('Books').id}])
-Category.update(Category.where(name: 'Fiction').ids, [{parent_id: Category.find_by_name('Books').id}])
-Category.update(Category.where(name: 'Children & Young Adult').ids, [{parent_id: Category.find_by_name('Books').id}])
+Category.update(Category.where(name: 'English').ids, [{ parent_id: Category.find_by_name('Books').id }])
+Category.update(Category.where(name: 'Competitive Books').ids, [{ parent_id: Category.find_by_name('Books').id }])
+Category.update(Category.where(name: 'Fiction').ids, [{ parent_id: Category.find_by_name('Books').id }])
+Category.update(Category.where(name: 'Children & Young Adult').ids, [{ parent_id: Category.find_by_name('Books').id }])
 
-Category.update(Category.where(name: 'Laptops').ids, [{parent_id: Category.find_by_name('Computers & Accessories').id}])
-Category.update(Category.where(name: 'Pen Drives').ids, [{parent_id: Category.find_by_name('Computers & Accessories').id}])
-Category.update(Category.where(name: 'Desktop Monitors').ids, [{parent_id: Category.find_by_name('Computers & Accessories').id}])
-Category.update(Category.where(name: 'Networking & Internet Devices').ids, [{parent_id: Category.find_by_name('Computers & Accessories').id}])
+Category.update(Category.where(name: 'Laptops').ids, [{ parent_id: Category.find_by_name('Computers & Accessories').id }])
+Category.update(Category.where(name: 'Pen Drives').ids, [{ parent_id: Category.find_by_name('Computers & Accessories').id }])
+Category.update(Category.where(name: 'Desktop Monitors').ids, [{ parent_id: Category.find_by_name('Computers & Accessories').id }])
+Category.update(Category.where(name: 'Networking & Internet Devices').ids, [{ parent_id: Category.find_by_name('Computers & Accessories').id }])
 
 Brand.create(name: 'Canon')
 Brand.create(name: 'Nikon')
@@ -133,16 +133,17 @@ Brand.create(name: 'Godrej')
 Brand.create(name: 'Bosch')
 Brand.create(name: 'Decor Nation')
 Brand.create(name: 'Bloomsbury Press')
+Brand.create(name: 'Island Records')
 
- Product.create(name: 'Product 1', category: Category.find_by(name: 'Tennis'), brand: Brand.find_by(name: 'Wilson'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
- Product.create(name: 'Product 2', category: Category.find_by(name: 'Tennis'), brand: Brand.find_by(name: 'Wilson'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
- Product.create(name: 'Product 3', category: Category.find_by(name: 'Tennis'), brand: Brand.find_by(name: 'Wilson'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
- Product.create(name: 'Product 4', category: Category.find_by(name: 'Football'), brand: Brand.find_by(name: 'Nike'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
- Product.create(name: 'Product 5', category: Category.find_by(name: 'Football'), brand: Brand.find_by(name: 'Nike'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
- Product.create(name: 'Product 6', category: Category.find_by(name: 'Football'), brand: Brand.find_by(name: 'Nike'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
- Product.create(name: 'Product 7', category: Category.find_by(name: 'Badminton'), brand: Brand.find_by(name: 'Adidas'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
- Product.create(name: 'Product 8', category: Category.find_by(name: 'Badminton'), brand: Brand.find_by(name: 'Adidas'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
- Product.create(name: 'Product 9', category: Category.find_by(name: 'Badminton'), brand: Brand.find_by(name: 'Adidas'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+Product.create(name: 'Product 1', category: Category.find_by(name: 'Tennis'), brand: Brand.find_by(name: 'Wilson'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+Product.create(name: 'Product 2', category: Category.find_by(name: 'Tennis'), brand: Brand.find_by(name: 'Wilson'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+Product.create(name: 'Product 3', category: Category.find_by(name: 'Tennis'), brand: Brand.find_by(name: 'Wilson'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+Product.create(name: 'Product 4', category: Category.find_by(name: 'Football'), brand: Brand.find_by(name: 'Nike'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+Product.create(name: 'Product 5', category: Category.find_by(name: 'Football'), brand: Brand.find_by(name: 'Nike'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+Product.create(name: 'Product 6', category: Category.find_by(name: 'Football'), brand: Brand.find_by(name: 'Nike'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+Product.create(name: 'Product 7', category: Category.find_by(name: 'Badminton'), brand: Brand.find_by(name: 'Adidas'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+Product.create(name: 'Product 8', category: Category.find_by(name: 'Badminton'), brand: Brand.find_by(name: 'Adidas'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+Product.create(name: 'Product 9', category: Category.find_by(name: 'Badminton'), brand: Brand.find_by(name: 'Adidas'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
 Product.create(name: 'Product 10', category: Category.find_by(name: 'Cricket'), brand: Brand.find_by(name: 'GM'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
 Product.create(name: 'Product 11', category: Category.find_by(name: 'Cricket'), brand: Brand.find_by(name: 'GM'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
 Product.create(name: 'Product 12', category: Category.find_by(name: 'Cricket'), brand: Brand.find_by(name: 'GM'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
@@ -227,3 +228,16 @@ Product.create(name: 'Product 90', category: Category.find_by(name: 'Home Improv
 Product.create(name: 'Product 91', category: Category.find_by(name: 'Furniture'), brand: Brand.find_by(name: 'Decor Nation'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
 Product.create(name: 'Product 92', category: Category.find_by(name: 'Furniture'), brand: Brand.find_by(name: 'Decor Nation'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
 Product.create(name: 'Product 93', category: Category.find_by(name: 'Furniture'), brand: Brand.find_by(name: 'Decor Nation'), description: 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+Product.create(name: 'Classic Rock',
+               category: Category.find_by(name: 'Classic Rock'),
+               brand: Brand.find_by(name: 'Sony Music'),
+               description: %(This is a short description.
+                                  Lorem ipsum dolor sit amet,
+                                  consectetur adipiscing elit.))
+
+Product.create(name: 'Hard Rock',
+               category: Category.find_by(name: 'Hard Rock'),
+               brand: Brand.find_by(name: 'Island Records'),
+               description: %(This is a short description.
+                                  Lorem ipsum dolor sit amet,
+                                  consectetur adipiscing elit.))

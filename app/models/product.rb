@@ -4,6 +4,7 @@ class Product < ActiveRecord::Base
   self.primary_key = 'id'
   belongs_to :category
   belongs_to :brand
+  validates :name, uniqueness: true
 
   class << self
     def search(term)

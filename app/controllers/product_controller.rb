@@ -8,8 +8,8 @@ class ProductController < ApplicationController
   def search
     products = Product.search(params[:term])
     render locals: {
-        products: products,
-        categories: products.collect(&:category).uniq
+      products: products,
+      categories: products.collect(&:category).uniq
     }
   end
 end
