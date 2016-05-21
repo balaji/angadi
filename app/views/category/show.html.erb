@@ -6,26 +6,10 @@
             <h1><%= category.name %></h1>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-3">
-            <div class="list-group">
-                <span>Browse by Brand</span>
-                <% cache do %>
-                    <% category.all_brands.each do |brand |%>
-                        <a href="#" class="list-group-item"><%= brand.name %></a>
-                    <% end %>
-                <% end %>
-            </div>
-        </div>
-
-        <div class="col-md-9">
-            <div class="row">
-                <% category.all_children.collect(&:products).flatten.each do |product| %>
-                    <%= render partial: 'home/product', locals: { product: product } %>
-                <% end %>
-            </div>
-        </div>
-    </div>
+    <%= render partial: 'products', locals: {
+            categories: [category],
+            products: products
+    } %>
 </div>
 
 

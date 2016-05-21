@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="list-group">
+            <% categories.each do |category| %>
+                <h4><%= category.name %></h4>
+                <span>Browse by Brand</span>
+                <% cache do %>
+                    <% category.all_brands.each do |brand| %>
+                        <% if defined?(brands) %>
+                            <% if brands.include?(brand) %>
+                                <%= link_to brand.name, "/product/search?term=#{brand.name}", class: 'list-group-item' %>
+                            <% end %>
+                        <% else %>
+                            <%= link_to brand.name, "/product/search?term=#{brand.name}", class: 'list-group-item' %>
+                        <% end %>
+                    <% end %>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <div class="row">
+            <% products.each do |product| %>
+                <%= render partial: 'home/product', locals: { product: product } %>
+            <% end %>
+        </div>
+    </div>
+</div>
