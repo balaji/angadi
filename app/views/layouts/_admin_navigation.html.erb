@@ -8,20 +8,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <%= link_to 'Angadi', root_path, class: 'navbar-brand' %>
-            <form class="input-group" action="/product/search" method="GET">
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-search"></span>
-                </span>
-                <input type="text" name="term" class="form-control" placeholder="Search"/>
-                <span class="input-group-btn">
-                    <input class="btn btn-default" type="submit" value="Search"/>
-                </span>
-            </form>
+            <%= link_to 'Angadi Admin', category_index_path, class: 'navbar-brand' %>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <%= render 'layouts/navigation_links' %>
+                <%= render 'layouts/admin_navigation_links' %>
             </ul>
         </div>
         <div class="clearfix"></div>

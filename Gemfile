@@ -10,6 +10,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'pg'
 gem 'puma'
+gem 'will_paginate'
+gem 'best_in_place'
 
 group :development do
   gem 'web-console', '~> 2.0'

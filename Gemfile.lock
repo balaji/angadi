@@ -44,6 +44,9 @@ GEM
     ast (2.2.0)
     autoprefixer-rails (6.3.6)
       execjs
+    best_in_place (3.1.0)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -285,6 +288,7 @@ GEM
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
     websocket (1.2.3)
+    will_paginate (3.1.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -293,6 +297,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeuuid
+  best_in_place
   better_errors
   bootstrap-sass
   byebug
@@ -330,6 +335,7 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  will_paginate
 
 RUBY VERSION
    ruby 2.3.0p0

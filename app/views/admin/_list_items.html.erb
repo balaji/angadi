@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            Browse and Create <%= url_param.pluralize.capitalize %>
+            <button class="btn btn-default btn-warning">
+                <span class="glyphicon glyphicon-plus"></span>
+                Create
+            </button>
+        </div>
+        <div class="panel-body">
+            <% items.each_with_index do |item, index| %>
+                <div class="row row-item <%= index == items.length - 1 ? '' : 'row-border' %>">
+                    <div class="col-xs-6">
+                        <a href="/admin/<%= url_param %>/<%= item.id %>"><%= item.name %></a>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <div class="panel-footer">
+            <%= will_paginate items %>
+        </div>
+    </div>
+</div>

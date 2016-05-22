@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="panel panel-info">
+        <div class="panel-heading">Edit <%= @campaign.name %></div>
+        <div class="panel-body">
+            <div class="row row-item">
+                <div class="col-xs-2">
+                    Name
+                </div>
+                <div class="col-xs-8">
+                    <%= best_in_place @campaign, :name, :as => :input %>
+                </div>
+            </div>
+
+            <div class="row row-item">
+                <div class="col-xs-2">
+                    Delete?
+                </div>
+                <div class="col-xs-8">
+                    <%= best_in_place @campaign, :deleted,
+                                      as: :checkbox,
+                                      collection: {false: 'No', true: 'Yes'} %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
