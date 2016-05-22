@@ -41,7 +41,7 @@ class Category < ActiveRecord::Base
   class << self
     def for_collection
       result = Category.where(deleted: false)
-                .sort_by { |cat| cat.name }.map { |cat| [cat.id, cat.name] }
+                       .sort_by(&:name).map { |cat| [cat.id, cat.name] }
       result << [nil, 'NULL']
     end
   end

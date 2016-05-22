@@ -8,7 +8,7 @@ class Brand < ActiveRecord::Base
   class << self
     def for_collection
       Brand.where(deleted: false)
-           .sort_by { |b| b.name }.map { |brand| [brand.id, brand.name] }
+           .sort_by(&:name).map { |brand| [brand.id, brand.name] }
     end
   end
 end

@@ -12,20 +12,21 @@ module Admin
     def show
       @product = Product.find(params[:id])
     end
+    # rubocop:disable Metrics/AbcSize
 
     def update
       @product = Product.find params[:id]
 
       if params[:product][:picture].present?
         save_image(params[:product][:picture].tempfile.path, @product)
-        render :show
-      else
-        respond_to do |format|
-          @product.update_attributes(permitted_params)
-          format.json { respond_with_bip(@product) }
-        end
+        return render :show
+      end
+      respond_to do |format|
+        @product.update_attributes(permitted_params)
+        format.json { respond_with_bip(@product) }
       end
     end
+    # rubocop:enable Metrics/AbcSize
 
     private
 
@@ -36,9 +37,7 @@ module Admin
 
     def resize_image(file, size, file_name)
       img = Magick::Image.read(file).first
-
       re_sized = img.resize_to_fit(size)
-
       path = Rails.root.join('public', 'images', file_name)
       re_sized.write(path) do
         self.quality = 100
