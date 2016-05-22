@@ -6,25 +6,24 @@
             <div class="row carousel-holder">
                 <div class="col-md-12">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <% active_campaigns = Campaign.active %>
-                            <% cache do %>
+                        <% cache do %>
+                            <ol class="carousel-indicators">
+                                <% active_campaigns = Campaign.active %>
                                 <% active_campaigns.each_with_index do |_, index| %>
                                     <li data-target="#carousel-example-generic"
                                         data-slide-to="<%= index %>"
                                         class="<%= index == 0 ? 'active' : '' %>"></li>
                                 <% end %>
-                            <% end %>
-                        </ol>
-                        <div class="carousel-inner campaign">
-                            <% cache do %>
+                            </ol>
+                            <div class="carousel-inner campaign">
                                 <% active_campaigns.each_with_index do |campaign, index| %>
                                     <div class="item <%= 'active' if index == 0 %>">
                                         <a href="<%= campaign.target_url %>"><%= image_tag "#{campaign.image_id}_campaign", height: '400' %></a>
                                     </div>
                                 <% end %>
-                            <% end %>
-                        </div>
+                            </div>
+                        <% end %>
+
                         <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                             <span class="glyphicon glyphicon-chevron-left"></span>
                         </a>
@@ -38,7 +37,7 @@
 
             <% categories.each do |category| %>
                 <% products = category.all_children.collect(&:products).flatten.sample(3)
-                    next if products.empty?
+                   next if products.empty?
                 %>
                 <div class="row">
                     <div class="col-xs-12">
