@@ -4,7 +4,7 @@
                 category.crumbs.each do |crumb|
                   crumb_split = crumb.split('$')
                   if crumb_split.length > 1
-                    links << link_to(crumb_split[0], category_url(crumb_split[1]))
+                    links << link_to(crumb_split[0], home_category_url(crumb_split[1]))
                   else
                     links << crumb
                   end

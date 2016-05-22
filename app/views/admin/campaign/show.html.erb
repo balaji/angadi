@@ -10,6 +10,23 @@
                     <%= best_in_place @campaign, :name, :as => :input %>
                 </div>
             </div>
+            <div class="row row-item">
+                <div class="col-xs-2">
+                    Target URL
+                </div>
+                <div class="col-xs-8">
+                    <%= best_in_place @campaign, :target_url, :as => :input %>
+                </div>
+            </div>
+
+            <div class="row row-item">
+                <div class="col-xs-2">
+                    Image
+                </div>
+                <div class="col-xs-8">
+                    <%= image_tag "#{@campaign.image_id}_campaign.jpg" %>
+                </div>
+            </div>
 
             <div class="row row-item">
                 <div class="col-xs-2">

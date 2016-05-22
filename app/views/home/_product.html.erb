@@ -4,7 +4,7 @@
         <div class="caption">
             <h4 class="pull-right"><%= number_to_currency(product.base_price, unit: 'S$ ') %></h4>
             <h4>
-                <%= link_to(product.name, product_path(product.id)) %>
+                <%= link_to(product.name, home_product_path(product.id)) %>
             </h4>
             <h6><%= product.brand.name %></h6>
             <p><%= product.description %></p>

@@ -13,6 +13,62 @@
 
             <div class="row row-item">
                 <div class="col-xs-2">
+                    Description
+                </div>
+                <div class="col-xs-8">
+                    <%= best_in_place @product, :description, :as => :input %>
+                </div>
+            </div>
+
+            <div class="row row-item">
+                <div class="col-xs-2">
+                    Category
+                </div>
+                <div class="col-xs-8">
+                    <%= best_in_place @product, :category_id,
+                                      as: :select,
+                                      collection: Category.for_collection,
+                                      display_as: 'name' %>
+                </div>
+            </div>
+
+            <div class="row row-item">
+                <div class="col-xs-2">
+                    Brand
+                </div>
+                <div class="col-xs-8">
+                    <%= best_in_place @product, :brand_id,
+                                      as: :select,
+                                      collection: Brand.for_collection,
+                                      display_as: 'name' %>
+                </div>
+            </div>
+
+            <div class="row row-item">
+                <div class="col-xs-2">
+                    Price
+                </div>
+                <div class="col-xs-8">
+                    <%= best_in_place @product, :base_price, :as => :input %>
+                </div>
+            </div>
+
+            <div class="row row-item">
+                <div class="col-xs-2">
+                    Image
+                </div>
+
+                <div class="col-xs-8">
+                    <%= form_for @product do |f| %>
+                        <%= f.file_field :picture %>
+                        <%= submit_tag 'Save Changes', class: 'btn btn-xs btn-primary' %>
+                    <% end %>
+                    <%= image_tag "#{@product.image_id}_300.jpg" %>
+                </div>
+            </div>
+
+            <div class="row row-item">
+                <div class="col-xs-2">
                     Delete?
                 </div>
                 <div class="col-xs-8">

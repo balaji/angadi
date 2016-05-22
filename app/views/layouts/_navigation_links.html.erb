@@ -9,10 +9,10 @@
                 <% sub_categories = Category.where(parent_id: category.id) %>
                 <% next if sub_categories.empty? %>
                 <li class="list-group-item">
-                    <%= link_to(category.name, category_url(category.id)) %>
+                    <%= link_to(category.name, home_category_url(category.id)) %>
                     <ul class="dropdown-menu dropdown-menu-far-right">
                     <% sub_categories.each do |sub_category| %>
-                        <li class="list-group-item"><%= link_to(sub_category.name, category_url(sub_category.id)) %></li>
+                        <li class="list-group-item"><%= link_to(sub_category.name, home_category_url(sub_category.id)) %></li>
                     <% end %>
                     </ul>
                 </li>

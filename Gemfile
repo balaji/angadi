@@ -12,6 +12,7 @@ gem 'pg'
 gem 'puma'
 gem 'will_paginate'
 gem 'best_in_place'
+gem 'rmagick'
 
 group :development do
   gem 'web-console', '~> 2.0'

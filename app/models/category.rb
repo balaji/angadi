@@ -38,6 +38,14 @@ class Category < ActiveRecord::Base
     path_string.split('|')
   end
 
+  class << self
+    def for_collection
+      result = Category.where(deleted: false)
+                .sort_by { |cat| cat.name }.map { |cat| [cat.id, cat.name] }
+      result << [nil, 'NULL']
+    end
+  end
+
   private
 
   def crumbs_query(id)

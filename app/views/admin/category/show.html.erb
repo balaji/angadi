@@ -13,6 +13,18 @@
 
             <div class="row row-item">
                 <div class="col-xs-2">
+                    Parent - Category
+                </div>
+                <div class="col-xs-8">
+                    <%= best_in_place @category, :parent_id,
+                                      as: :select,
+                                      collection: Category.for_collection,
+                                      display_as: 'name' %>
+                </div>
+            </div>
+
+            <div class="row row-item">
+                <div class="col-xs-2">
                     Delete?
                 </div>
                 <div class="col-xs-8">

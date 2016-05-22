@@ -18,7 +18,7 @@
                             <div class="carousel-inner campaign">
                                 <% active_campaigns.each_with_index do |campaign, index| %>
                                     <div class="item <%= 'active' if index == 0 %>">
-                                        <a href="<%= campaign.target_url %>"><%= image_tag "#{campaign.image_id}_campaign", height: '400' %></a>
+                                        <a href="<%= campaign.target_url %>"><%= image_tag "#{campaign.image_id}_campaign.jpg", height: '400' %></a>
                                     </div>
                                 <% end %>
                             </div>

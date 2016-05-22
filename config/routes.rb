@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   end
   get 'product/search', to: 'product#search', as: 'product_search'
   get 'admin', to: 'admin/category#index'
-  resources 'category', only: :show
-  resources 'product', only: :show
+  resources 'category', only: :show, as: 'home_category'
+  resources 'product', only: :show, as: 'home_product'
 end
