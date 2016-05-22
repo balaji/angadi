@@ -1,3 +1,4 @@
+# :nodoc:
 class CreateCampaigns < ActiveRecord::Migration
   def change
     create_table :campaigns, id: :uuid do |t|

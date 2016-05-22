@@ -1,5 +1,5 @@
-# :nodoc:
 require 'securerandom'
+# :nodoc:
 class FillImageIds < ActiveRecord::Migration
   def change
     add_index :products, :image_id, unique: true
