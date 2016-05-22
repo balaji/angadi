@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160522045901) do
+ActiveRecord::Schema.define(version: 20160522081641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20160522045901) do
   end
 
   add_index "brands", ["name"], name: "index_brands_on_name", unique: true, using: :btree
+
+  create_table "campaigns", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.string   "name"
+    t.text     "target_url",                   null: false
+    t.string   "image_id",                     null: false
+    t.datetime "start_time", default: "now()"
+    t.datetime "end_time"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
 
   create_table "categories", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name",                       null: false
@@ -46,8 +56,10 @@ ActiveRecord::Schema.define(version: 20160522045901) do
     t.datetime "updated_at",                            null: false
     t.boolean  "deleted",               default: false
     t.money    "base_price",  scale: 2,                 null: false
+    t.string   "image_id"
   end
 
+  add_index "products", ["image_id"], name: "index_products_on_image_id", unique: true, using: :btree
   add_index "products", ["name"], name: "index_products_on_name", unique: true, using: :btree
 
   add_foreign_key "categories", "categories", column: "parent_id"

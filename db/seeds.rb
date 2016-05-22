@@ -241,3 +241,18 @@ Product.create(name: 'Hard Rock',
                description: %(This is a short description.
                                   Lorem ipsum dolor sit amet,
                                   consectetur adipiscing elit.))
+
+Campaign.create(name: 'Summer Special',
+                target_url: '#',
+                image_id: 'sale_1',
+                end_time: 1.year.from_now)
+
+Campaign.create(name: 'Clearance Sale',
+                target_url: '#',
+                image_id: 'sale_2',
+                end_time: 1.year.from_now)
+
+Campaign.create(name: 'Winter Sale',
+                target_url: '#',
+                image_id: 'sale_3',
+                end_time: 1.year.from_now)
