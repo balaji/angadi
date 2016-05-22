@@ -45,6 +45,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'sqlite3'
   gem 'activeuuid'
+  gem 'money-rails'
 end
 
 group :production do
