@@ -1,8 +1,16 @@
 <% content_for(:title, "Buy #{product.name} - Angadi") %>
 <div class="container">
+    <%= render partial: 'category/crumbs', locals: { category: product.category } %>
     <div class="row">
-        <div class="col-xs-12 text-center">
+        <div class="col-xs-4">
+            <%= image_tag "#{product.image_id}_450.jpg" %>
+        </div>
+        <div class="col-xs-8">
             <h1><%= product.name %></h1>
+            <div class="description"><%= product.description %></div>
+            <div class="price"><%= number_to_currency(product.base_price, unit: 'S$ ') %></div>
+            <h5><div class="brand"><a href="#"><%= product.brand.name %></a></div></h5>
+            <button class="btn btn-default btn-success">Add to Cart</button>
         </div>
     </div>
 </div>

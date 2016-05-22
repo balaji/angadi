@@ -9,7 +9,7 @@ namespace :util do
     files.take(count).zip(products).each do |x|
       file_name = x[0]
       product = x[1]
-      File.rename(file_name, "#{product.image_id}_300.jpg")
+      File.rename(file_name, "#{product.image_id}_450.jpg")
     end
   end
 end

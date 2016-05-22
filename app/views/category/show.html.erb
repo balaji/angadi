@@ -1,19 +1,6 @@
 <% content_for(:title, "Browse #{category.name} - Angadi") %>
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <h4><%= links = [link_to('Home', root_url)]
-                category.crumbs.each do |crumb|
-                  crumb_split = crumb.split('$')
-                  if crumb_split.length > 1
-                    links << link_to(crumb_split[0], category_url(crumb_split[1]))
-                  else
-                    links << crumb
-                  end
-                end
-                links.join(' > ').html_safe %></h4>
-        </div>
-    </div>
+    <%= render partial: 'category/crumbs', locals: { category: category } %>
     <div class="row">
         <div class="col-xs-3"></div>
         <div class="col-xs-9 text-center">
@@ -25,5 +12,3 @@
             products: products
     } %>
 </div>
-
-

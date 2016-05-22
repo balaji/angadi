@@ -2,7 +2,7 @@
     <div class="thumbnail">
         <%= image_tag "#{product.image_id}_300.jpg", height: '150', width: '300' %>
         <div class="caption">
-            <h4 class="pull-right">S$ <%= product.base_price %></h4>
+            <h4 class="pull-right"><%= number_to_currency(product.base_price, unit: 'S$ ') %></h4>
             <h4>
                 <%= link_to(product.name, product_path(product.id)) %>
             </h4>
