@@ -23,7 +23,7 @@ Features
 The website UI is built using [bootstrap 3](http://getbootstrap.com). 
 
 ### Admin page
-Admin page provides interface to edit products, categories, brands and campaigns. 
+Admin page provides interface to edit products, categories, brands and campaigns. [https://angadi-balaji.herokuapp.com/admin](https://angadi-balaji.herokuapp.com/admin)
 
 ### Notable implementations
 * Category -> Sub-Category -> Sub-Sub-category is implemented via a tree-like structure with each record in `categories` table having a `parent_id` that is an `id` of the categories record itself. Querying all products belong to a particular node in the tree is implemented via psql recursive query.
